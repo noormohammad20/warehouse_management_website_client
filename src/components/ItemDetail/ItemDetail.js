@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import useItemDetail from '../../hooks/useItemDetail'
@@ -9,8 +9,11 @@ const ItemDetail = () => {
     const { _id, image, description, price, quantity, supplierName, sold, name } = item
 
     const handleDelivered = (id) => {
-        const updateQuantity = quantity - 1
-        const url = `http://localhost:5000/inventoryItems/${id}`
+        const updateQuantity = {
+            newQuantity: quantity - 1
+        }
+        console.log(updateQuantity)
+        const url = `http://localhost:5000/inventoryItems/update/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
