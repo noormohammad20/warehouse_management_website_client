@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app"
 import { getAuth } from "firebase/auth"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBaUg4H7QQ1kaBindyXOEaFv6xUOpg16gc",
-    authDomain: "toy-warehouse.firebaseapp.com",
-    projectId: "toy-warehouse",
-    storageBucket: "toy-warehouse.appspot.com",
-    messagingSenderId: "214742408591",
-    appId: "1:214742408591:web:5d4be03207a72ea939bffa"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
 }
 
 // Initialize Firebase
