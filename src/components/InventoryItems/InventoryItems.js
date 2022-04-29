@@ -13,7 +13,7 @@ const InventoryItems = () => {
     return (
         <div id='inventoryItems'>
             <h1 className='text-primary text-center my-5'>Inventory Items</h1>
-            <Row xs={1} md={3} className="g-5">
+            <Row xs={1} sm={1} md={3} className="g-5">
                 {
                     items.slice(0, 6).map(item => <InventoryItem
                         key={item._id}
