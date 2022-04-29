@@ -9,7 +9,7 @@ const ItemDetail = () => {
     const { _id, image, description, price, quantity, supplierName, sold, name } = item
 
     const handleDelivered = (id) => {
-        const updateQuantity = item.quantity
+        const updateQuantity = quantity - 1
         const url = `http://localhost:5000/inventoryItems/${id}`
         fetch(url, {
             method: 'PUT',
