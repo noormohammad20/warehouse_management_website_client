@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import useItemDetail from '../../hooks/useItemDetail'
@@ -24,7 +24,7 @@ const ItemDetail = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-
+        window.location.reload()
     }
     return (
         <Card className='mx-auto' style={{ minHeight: '80vh', width: '28rem' }}>
