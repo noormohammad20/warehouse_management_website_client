@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ManageInventoryDetail = ({ item }) => {
-    const { _id, name, price, quantity } = item
+    const { _id, itemName, price, quantity } = item
     const handleUserDelete = id => {
         const proceed = window.confirm('Are You Sure About Deleting??')
         if (proceed) {
@@ -20,7 +20,7 @@ const ManageInventoryDetail = ({ item }) => {
     }
     return (
         <tr>
-            <td>{name}</td>
+            <td>{itemName}</td>
             <td>{price}</td>
             <td>{quantity}</td>
             <td onClick={() => handleUserDelete(_id)} className='btn btn-link text-decoration-none text-danger'>X</td>

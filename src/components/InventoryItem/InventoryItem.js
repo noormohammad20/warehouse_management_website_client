@@ -2,7 +2,7 @@ import { Button, Card, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 const InventoryItem = ({ item }) => {
-    const { _id, name, price, quantity, supplierName, description, image } = item
+    const { _id, itemName, price, quantity, supplierName, description, image } = item
     const navigate = useNavigate()
     const navigateToItemDetail = (id) => {
         navigate(`/inventoryItem/${id}`)
@@ -14,7 +14,7 @@ const InventoryItem = ({ item }) => {
             <Card style={{ width: '25rem' }}>
                 <Card.Img style={{ height: '350px' }} className='w-100' variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>Product Name: {name}</Card.Title>
+                    <Card.Title>Product Name: {itemName}</Card.Title>
                     <Card.Title>Price: {price}</Card.Title>
                     <Card.Title>Quantity: {quantity}</Card.Title>
                     <Card.Title>Supplier Name: {supplierName}</Card.Title>

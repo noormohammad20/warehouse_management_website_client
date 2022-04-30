@@ -3,7 +3,6 @@ import React from 'react'
 const AddNewItem = () => {
     const handleAddItem = (e) => {
         e.preventDefault()
-        // const image = e.target.image.value
         const itemName = e.target.itemName.value
         const image = e.target.image.value
         const price = e.target.price.value

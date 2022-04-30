@@ -1,6 +1,6 @@
 [
     {
-        "name": "Robo Dog",
+        "itemName": "Robo Dog",
         "image": "https://m.media-amazon.com/images/I/8199-Cv0y8L._AC_SX522_.jpg",
         "price": "$199",
         "quantity": 38,
@@ -8,7 +8,7 @@
         "description": "Remote Control Robot Dog Toy, Robots for Kids.\r\n"
     },
     {
-        "name": "Jungle Adventure",
+        "itemName": "Jungle Adventure",
         "image": "https://m.media-amazon.com/images/I/81sbgguM0sL._AC_SX569_.jpg",
         "price": "$510",
         "quantity": 26,
@@ -16,7 +16,7 @@
         "description": " Jungle Adventure Kids Toddler Wooden Bead Maze & Railway Train Track Play Table Toy.\r\n"
     },
     {
-        "name": "baby truck",
+        "itemName": "baby truck",
         "image": "https://m.media-amazon.com/images/I/71mla1QQhFL._AC_SX569_.jpg",
         "price": "$330",
         "quantity": 29,
@@ -24,7 +24,7 @@
         "description": "VTech Drop and Go Dump Truck, Yellow.\r\n"
     },
     {
-        "name": "pop it",
+        "itemName": "pop it",
         "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/%D0%9F%D0%BE%D0%BF-%D0%B8%D1%82.jpg",
         "price": "$260",
         "quantity": 33,
@@ -32,7 +32,7 @@
         "description": "Boy playing with rainbow pop it fidget toy. Push bubble fidget sensory toy - washable and reusable silicon stress relief toy\r\n"
     },
     {
-        "name": "Horse",
+        "itemName": "Horse",
         "image": "https://m.media-amazon.com/images/I/716X-lBnL7L._AC_SX569_.jpg",
         "price": "$170",
         "quantity": 28,
@@ -40,7 +40,7 @@
         "description": "Good for kids Balance and asy to install & maintenance .\r\n"
     },
     {
-        "name": "plan toys",
+        "itemName": "plan toys",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE48z7gvLFCVU-HxD2gq4L7AGAMOr2M6LxsA&usqp=CAU",
         "price": "$299",
         "quantity": 34,
@@ -48,7 +48,7 @@
         "description": "Wooden Dancing Alligator Push and Pull Toy.\r\n"
     },
     {
-        "name": "teddy",
+        "itemName": "teddy",
         "image": "https://media.istockphoto.com/photos/brown-teddy-bear-isolated-in-front-of-a-white-background-picture-id909772478?k=20&m=909772478&s=612x612&w=0&h=mzLuJ7ywrSDHmpchf9spOeNF2Ovr2aQBw1z57Szx17g=",
         "price": "$299",
         "quantity": 44,
