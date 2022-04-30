@@ -18,7 +18,7 @@ const ManageInventory = () => {
                 <tbody>
                     {
                         items.map(item => <ManageInventoryDetail
-                            key={item._key}
+                            key={item._id}
                             item={item}
                         ></ManageInventoryDetail>)
                     }
