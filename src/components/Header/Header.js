@@ -33,6 +33,13 @@ const Header = () => {
                             Dank memes
                         </Nav.Link>
                         {
+                            user && <>
+                                <Nav.Link as={Link} to="/manageItems">Manage Items</Nav.Link>
+                                <Nav.Link as={Link} to="/addNewItem">Add Items</Nav.Link>
+                                <Nav.Link as={Link} to="/myItems">My Items</Nav.Link>
+                            </>
+                        }
+                        {
                             user ?
                                 <button className='btn btn-link text-decoration-none text-light' onClick={handleSignOut} >Sign Out</button>
                                 :

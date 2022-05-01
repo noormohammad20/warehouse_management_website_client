@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import './App.css'
 import AddNewItem from './components/AddNewItem/AddNewItem'
 import Footer from './components/Footer/Footer'
@@ -10,7 +11,8 @@ import ManageInventory from './components/ManageInventory/ManageInventory'
 import NotFound from './components/NotFound/NotFound'
 import RequireAuth from './components/RequireAuth/RequireAuth'
 import Signup from './components/Signup/Signup'
-
+import 'react-toastify/dist/ReactToastify.css'
+import MyItems from './components/MyItems/MyItems'
 
 function App() {
   return (
@@ -26,11 +28,25 @@ function App() {
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
-        <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
-        <Route path='/addNewItem' element={<AddNewItem></AddNewItem>}></Route>
+        <Route path='/manageInventory' element={
+          <RequireAuth>
+            <ManageInventory></ManageInventory>
+          </RequireAuth>}
+        ></Route>
+        <Route path='/addNewItem' element={
+          <RequireAuth>
+            <AddNewItem></AddNewItem>
+          </RequireAuth>
+        }></Route>
+        <Route path='/myItems' element={
+          <RequireAuth>
+            <MyItems></MyItems>
+          </RequireAuth>
+        }></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   )
 }
