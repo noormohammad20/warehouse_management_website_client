@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Social from '../Social/Social'
 import Loading from '../Loading/Loading'
+import axios from 'axios'
 
 const Login = () => {
 
@@ -27,7 +28,7 @@ const Login = () => {
 
     useEffect(() => {
         if (user) {
-            navigate(from, { replace: true })
+            // navigate(from, { replace: true })
         }
     }, [user])
 
@@ -39,12 +40,15 @@ const Login = () => {
     if (error) {
         errorMessage = <p className='text-danger text-center'>{error?.message}</p>
     }
-    const handleLogin = e => {
+    const handleLogin = async e => {
         e.preventDefault()
         const email = emailRef.current.value
         const password = passwordRef.current.value
 
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password)
+        const { data } = await axios.post('http://localhost:5000/login', { email })
+        localStorage.setItem('accessToken', data.accessToken)
+        navigate(from, { replace: true })
     }
     const navigateSignup = () => {
         navigate('/signup')

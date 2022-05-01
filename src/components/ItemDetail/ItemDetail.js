@@ -4,6 +4,7 @@ import useItemDetail from '../../hooks/useItemDetail'
 
 const ItemDetail = () => {
     const { itemId } = useParams()
+    console.log(itemId)
     const [item] = useItemDetail(itemId)
     const { _id, image, description, price, quantity, supplierName, name } = item
 
