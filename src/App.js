@@ -13,6 +13,7 @@ import RequireAuth from './components/RequireAuth/RequireAuth'
 import Signup from './components/Signup/Signup'
 import 'react-toastify/dist/ReactToastify.css'
 import MyItems from './components/MyItems/MyItems'
+import Blogs from './components/Blogs/Blogs'
 
 
 
@@ -51,7 +52,7 @@ function App() {
             <ManageInventory></ManageInventory>
           </RequireAuth>
         }></Route>
-
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

@@ -21,8 +21,8 @@ const Header = () => {
                         <Nav.Link href="home#inventoryItems">Inventory</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
+                        <Nav.Link as={Link} to="/blogs">
+                            Blogs
                         </Nav.Link>
                         {
                             user && <>
