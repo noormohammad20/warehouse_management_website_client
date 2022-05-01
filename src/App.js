@@ -14,6 +14,9 @@ import Signup from './components/Signup/Signup'
 import 'react-toastify/dist/ReactToastify.css'
 import MyItems from './components/MyItems/MyItems'
 
+
+
+
 function App() {
   return (
     <div>
@@ -48,6 +51,7 @@ function App() {
             <ManageInventory></ManageInventory>
           </RequireAuth>
         }></Route>
+
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
