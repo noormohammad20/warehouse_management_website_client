@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import auth from '../../firebase.init'
 import Loading from '../Loading/Loading'
 import Social from '../Social/Social'
@@ -28,7 +29,7 @@ const Signup = () => {
 
 
         if (password !== confirmPassword) {
-            return alert('Your Password Not Matched')
+            return toast('Your Password Not Matched!!')
         }
         createUserWithEmailAndPassword(email, password)
 

@@ -1,12 +1,13 @@
+import { useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import useItemDetail from '../../hooks/useItemDetail'
 
 const ItemDetail = () => {
+    const [stock, setStock] = useState()
     const { itemId } = useParams()
-    console.log(itemId)
     const [item] = useItemDetail(itemId)
-    const { _id, image, description, price, quantity, supplierName, name } = item
+    const { _id, image, description, price, quantity, supplierName, itemName } = item
 
     const handleDelivered = (id) => {
         const updateQuantity = {
@@ -29,31 +30,29 @@ const ItemDetail = () => {
 
     const handleStock = (e) => {
         e.preventDefault()
-        const stockInput = e.target.stock.value
-        const stockUpdate = Number(stockInput)
-        console.log(stockUpdate)
-        const updateQuantity = {
-            renewQuantity: quantity + stockUpdate
+        const data = {
+            upQuantity: Number(stock),
+            quantity: Number(quantity)
         }
-        console.log(updateQuantity)
-        const url = `http://localhost:5000/inventoryItems/${itemId}`
+        const url = `http://localhost:5000/inventoryItems/update/${itemId}`
         fetch(url, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(updateQuantity)
+            body: JSON.stringify(data)
 
         })
             .then(res => res.json())
             .then(data => console.log(data))
+        window.location.reload()
     }
     return (
         <Card className='mx-auto' style={{ minHeight: '80vh', width: '28rem' }}>
             <Card.Img className='w-50 mx-auto' variant="top" src={image} />
             <Card.Body>
                 <Card.Title>Item Id: {_id}</Card.Title>
-                <Card.Text> Item Name: {name} </Card.Text>
+                <Card.Text> Item Name: {itemName} </Card.Text>
                 <Card.Text> Price: {price} </Card.Text>
                 <Card.Text > Quantity: {quantity} </Card.Text>
                 <Card.Text> Price: {supplierName} </Card.Text>
@@ -64,8 +63,13 @@ const ItemDetail = () => {
             </Card.Body>
             <Card.Body>
                 <form onSubmit={handleStock}  >
-                    <input type="text" name="stock" id="stock" />
-                    <input type="submit" value="Stock" />
+                    <input
+                        className='form-control'
+                        type={"number"}
+                        value={stock}
+                        onChange={(e) => setStock(e.target.value)}
+                    />
+                    <button className='btn-success' type='submit'>Update Stock</button>
                 </form>
             </Card.Body>
         </Card>

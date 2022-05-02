@@ -28,7 +28,7 @@ const Login = () => {
 
     useEffect(() => {
         if (user) {
-            // navigate(from, { replace: true })
+            navigate(from, { replace: true })
         }
     }, [user])
 
@@ -44,11 +44,14 @@ const Login = () => {
         e.preventDefault()
         const email = emailRef.current.value
         const password = passwordRef.current.value
-
         await signInWithEmailAndPassword(email, password)
         const { data } = await axios.post('http://localhost:5000/login', { email })
         localStorage.setItem('accessToken', data.accessToken)
-        navigate(from, { replace: true })
+        if (!email || !password) {
+
+        }
+
+
     }
     const navigateSignup = () => {
         navigate('/signup')
