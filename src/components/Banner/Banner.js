@@ -8,7 +8,8 @@ const Banner = () => {
         setIndex(selectedIndex)
     }
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel
+            activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item>
                 <img
                     style={{ width: '100%', height: '655px', backgroundSize: 'contain' }}

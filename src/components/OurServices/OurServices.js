@@ -7,7 +7,7 @@ import svg2 from '../../images/img2.svg'
 const OurServices = () => {
     return (
 
-        <>
+        <div className='container'>
             <h2
                 style={{ color: 'coral', fontSize: '40px', textTransform: 'uppercase' }}
                 className='text-center mt-3'>Our Services</h2>
@@ -50,7 +50,7 @@ const OurServices = () => {
                 </Col>
             </Row>
 
-        </>
+        </div>
     )
 }
 

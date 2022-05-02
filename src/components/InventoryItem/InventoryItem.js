@@ -14,7 +14,9 @@ const InventoryItem = ({ item }) => {
             <Card
                 style={{ width: '22rem', height: '450px', boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', transition: '0.3s' }}>
                 <Card.Img style={{ height: '25vh', objectFit: 'cover' }} className='w-100' variant="top" src={image} />
-                <Card.Body className='d-flex flex-column'>
+                <Card.Body className='d-flex flex-column'
+                    style={{ overflow: 'auto', scrollBehavior: 'hidden' }}
+                >
                     <Card.Title>Product Name: {itemName}</Card.Title>
                     <Card.Title>Price: {price}</Card.Title>
                     <Card.Title>Quantity: {quantity}</Card.Title>
