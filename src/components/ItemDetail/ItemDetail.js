@@ -52,31 +52,37 @@ const ItemDetail = () => {
             })
     }
     return (
-        <Card className='mx-auto' style={{ minHeight: '80vh', width: '28rem' }}>
-            <Card.Img className='w-50 mx-auto' variant="top" src={image} />
-            <Card.Body>
-                <Card.Title>Item Id: {_id}</Card.Title>
-                <Card.Text> Item Name: {itemName} </Card.Text>
-                <Card.Text> Price: {price} </Card.Text>
-                <Card.Text > Quantity: {quantity} </Card.Text>
-                <Card.Text> Price: {supplierName} </Card.Text>
-                <Card.Text> description: {description}</Card.Text>
-                <Button
-                    onClick={() => handleDelivered(_id)}
-                    variant="primary">Delivered</Button>
-            </Card.Body>
-            <Card.Body>
-                <form onSubmit={handleStock}  >
-                    <input
-                        className='form-control'
-                        type={"number"}
-                        value={stock}
-                        onChange={(e) => setStock(e.target.value)}
-                    />
-                    <button className='btn-success' type='submit'>Update Stock</button>
-                </form>
-            </Card.Body>
-        </Card>
+        <div
+            className='mx-auto '
+            style={{ minHeight: '85vh', width: '25rem' }}>
+            <Card className='mt-3' >
+                <Card.Img
+                    style={{ height: '25vh', objectFit: 'cover' }}
+                    className='w-75 mx-auto' variant="top" src={image} />
+                <Card.Body>
+                    <Card.Title>Item Id: {_id}</Card.Title>
+                    <Card.Text> Item Name: {itemName} </Card.Text>
+                    <Card.Text> Price: {price} </Card.Text>
+                    <Card.Text > Quantity: {quantity} </Card.Text>
+                    <Card.Text> Price: {supplierName} </Card.Text>
+                    <Card.Text> description: {description}</Card.Text>
+                    <Button
+                        onClick={() => handleDelivered(_id)}
+                        variant="primary d-block mx-auto">Delivered</Button>
+                </Card.Body>
+                <Card.Body>
+                    <form onSubmit={handleStock}  >
+                        <input
+                            className='form-control'
+                            type={"number"}
+                            value={stock}
+                            onChange={(e) => setStock(e.target.value)}
+                        />
+                        <button className='btn-success mt-3' type='submit'>Re Stock</button>
+                    </form>
+                </Card.Body>
+            </Card>
+        </div>
     )
 }
 
