@@ -25,7 +25,9 @@ const ItemDetail = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-        window.location.reload()
+            .then(() => {
+                window.location.reload()
+            })
     }
 
     const handleStock = (e) => {
@@ -45,7 +47,9 @@ const ItemDetail = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-        window.location.reload()
+            .then(() => {
+                window.location.reload()
+            })
     }
     return (
         <Card className='mx-auto' style={{ minHeight: '80vh', width: '28rem' }}>
