@@ -14,7 +14,7 @@ const ItemDetail = () => {
             newQuantity: quantity - 1
         }
         console.log(updateQuantity)
-        const url = `http://localhost:5000/inventoryItems/${id}`
+        const url = `https://obscure-retreat-51462.herokuapp.com/inventoryItems/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -34,7 +34,7 @@ const ItemDetail = () => {
             upQuantity: Number(stock),
             quantity: Number(quantity)
         }
-        const url = `http://localhost:5000/inventoryItems/update/${itemId}`
+        const url = `https://obscure-retreat-51462.herokuapp.com/inventoryItems/update/${itemId}`
         fetch(url, {
             method: 'PUT',
             headers: {

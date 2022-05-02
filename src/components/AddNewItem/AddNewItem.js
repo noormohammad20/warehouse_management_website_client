@@ -15,7 +15,7 @@ const AddNewItem = () => {
         const supplierName = e.target.supplierName.value
         const description = e.target.description.value
         const item = { itemName, email, image, price, quantity, supplierName, description }
-        fetch('http://localhost:5000/inventoryItems', {
+        fetch('https://obscure-retreat-51462.herokuapp.com/inventoryItems', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

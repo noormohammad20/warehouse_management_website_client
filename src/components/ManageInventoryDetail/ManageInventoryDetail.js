@@ -5,7 +5,7 @@ const ManageInventoryDetail = ({ item }) => {
     const handleUserDelete = id => {
         const proceed = window.confirm('Are You Sure About Deleting??')
         if (proceed) {
-            const url = `http://localhost:5000/inventoryItems/${id}`
+            const url = `https://obscure-retreat-51462.herokuapp.com/inventoryItems/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
