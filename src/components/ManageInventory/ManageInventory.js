@@ -14,6 +14,7 @@ const ManageInventory = () => {
                         <th>Product Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
+                        <th>Supplier Name</th>
                         <th>Delete</th>
                     </tr>
                 </thead>

@@ -7,7 +7,7 @@ const ItemDetail = () => {
     const [stock, setStock] = useState()
     const { itemId } = useParams()
     const [item] = useItemDetail(itemId)
-    const { _id, image, description, price, quantity, supplierName, itemName } = item
+    const { _id, image, description, price, quantity, sold, supplierName, itemName } = item
 
     const handleDelivered = (id) => {
         const updateQuantity = {
@@ -64,6 +64,7 @@ const ItemDetail = () => {
                     <Card.Text> Item Name: {itemName} </Card.Text>
                     <Card.Text> Price: {price} </Card.Text>
                     <Card.Text > Quantity: {quantity} </Card.Text>
+                    <Card.Text > Sold: {sold} </Card.Text>
                     <Card.Text> Price: {supplierName} </Card.Text>
                     <Card.Text> description: {description}</Card.Text>
                     <Button
