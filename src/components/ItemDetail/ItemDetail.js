@@ -1,33 +1,39 @@
 import { useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import useItemDetail from '../../hooks/useItemDetail'
 
 const ItemDetail = () => {
     const [stock, setStock] = useState()
     const { itemId } = useParams()
     const [item] = useItemDetail(itemId)
-    const { _id, image, description, price, quantity, sold, supplierName, itemName } = item
+    const { _id, image, description, price, quantity, supplierName, itemName } = item
 
     const handleDelivered = (id) => {
-        const updateQuantity = {
-            newQuantity: quantity - 1
-        }
-        console.log(updateQuantity)
-        const url = `https://obscure-retreat-51462.herokuapp.com/inventoryItems/${id}`
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updateQuantity)
+        if (quantity > 0) {
+            const updateQuantity = {
+                newQuantity: quantity - 1
+            }
+            console.log(updateQuantity)
+            const url = `https://obscure-retreat-51462.herokuapp.com/inventoryItems/${id}`
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updateQuantity)
 
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-            .then(() => {
-                window.location.reload()
             })
+                .then(res => res.json())
+                .then(data => console.log(data))
+                .then(() => {
+                    window.location.reload()
+                })
+        }
+        else {
+            toast('This Product Is sold Out !! Please Try Another One')
+        }
     }
 
     const handleStock = (e) => {
@@ -64,7 +70,6 @@ const ItemDetail = () => {
                     <Card.Text> Item Name: {itemName} </Card.Text>
                     <Card.Text> Price: {price} </Card.Text>
                     <Card.Text > Quantity: {quantity} </Card.Text>
-                    <Card.Text > Sold: {sold} </Card.Text>
                     <Card.Text> Price: {supplierName} </Card.Text>
                     <Card.Text> description: {description}</Card.Text>
                     <Button
