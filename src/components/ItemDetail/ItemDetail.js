@@ -69,7 +69,7 @@ const ItemDetail = () => {
                     <Card.Title>Item Id: {_id}</Card.Title>
                     <Card.Text> Item Name: {itemName} </Card.Text>
                     <Card.Text> Price: {price} </Card.Text>
-                    <Card.Text > Quantity: {quantity} </Card.Text>
+                    <Card.Text > Quantity:  {item.quantity > 0 ? <span>{quantity}</span> : <span className='text-success'> Sold Out</span>}</Card.Text>
                     <Card.Text> Price: {supplierName} </Card.Text>
                     <Card.Text> description: {description}</Card.Text>
                     <Button
